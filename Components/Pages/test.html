@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quizzy | Test</title>
+  <link rel="stylesheet" href="../CSS/test.css">
+  <link href="../../Favicon/Favicon.ico" rel="icon" type="image/x-icon">
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="logo">
+    <a href="../index.html">Quizzy</a>
+  </div>
+  <div class="links">
+    <a href="../../index.html">Home</a>
+    <a href="../Instruction.html">Instructions</a>
+  </div>
+</div>
+
+<!-- Main Quiz Area -->
+<div class="main">
+  <div class="content" id="quiz-container">
+    <h1 id="quiz-title">Quiz</h1>
+
+    <!-- Quiz Info -->
+    <div id="quiz-info">
+      <p><strong>Time per question:</strong> <span id="time-per-question">0</span>s</p>
+      <p><strong>Total questions:</strong> <span id="total-questions">0</span></p>
+    </div>
+
+    <!-- Question Box -->
+    <div id="question-box" style="display:none;">
+      <p id="question-text"></p>
+      <div id="options-container"></div>
+      <p id="timer">Time left: <span id="time-left">0</span>s</p>
+      <button id="next-btn" class="home-btn">Next</button>
+    </div>
+
+    <!-- Result Box -->
+    <div id="result-box" style="display:none;">
+      <h2>Quiz Completed!</h2>
+      <p>Your Score: <span id="score">0</span>/<span id="total-score">0</span></p>
+      <button id="restart-btn" class="home-btn">Restart Quiz</button>
+      <a href="../quiz.html" class="home-btn">Back to Quiz List</a>
+      <a href="../../index.html" class="home-btn">Back to Home</a>
+    </div>
+  </div>
+</div>
+
+<!-- Script -->
+<script src="../JS/script.js"></script>
+</body>
+</html>

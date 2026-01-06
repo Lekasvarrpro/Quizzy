@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../../Favicon/Favicon.ico" rel="icon" type="image/x-icon" />
+    <title>Quizzy | Module</title>
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/quiz.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="content">
+        <h1 id="module-title">Module Quiz</h1>
+        <p id="module-description">Test your knowledge!</p>
+
+        <div class="quiz-info">
+          <p>
+            <strong>Time per question:</strong>
+            <span id="time-per-question">20</span> seconds
+          </p>
+          <p>
+            <strong>Total questions:</strong>
+            <span id="total-questions">10</span>
+          </p>
+        </div>
+
+        <button id="start-btn" class="home-btn">Start Quiz</button>
+        <a
+          href="../quiz.html"
+          class="home-btn"
+          style="
+            display: block;
+            margin: 30px auto 0;
+            width: fit-content;
+            padding: 12px 26px;
+            background: #262e53;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: 0.3s;
+          "
+          >Back to Quiz List</a
+        >
+      </div>
+    </div>
+
+    <script>
+      // Get module selected on quiz list page
+      const selectedModule = localStorage.getItem("selectedModule");
+
+      // References
+      const moduleTitle = document.getElementById("module-title");
+      const moduleDesc = document.getElementById("module-description");
+      const timeEl = document.getElementById("time-per-question");
+      const totalEl = document.getElementById("total-questions");
+      const startBtn = document.getElementById("start-btn");
+
+      // Modules data
+      const modules = {
+        technology: {
+          title: "Technology Quiz",
+          description: "Test your knowledge about Technology!",
+          time: 20,
+          totalQuestions: 10,
+        },
+        science: {
+          title: "Science Quiz",
+          description: "Test your knowledge about Science!",
+          time: 20,
+          totalQuestions: 10,
+        },
+        animals: {
+          title: "Animals Quiz",
+          description: "Test your knowledge about Animals!",
+          time: 20,
+          totalQuestions: 10,
+        },
+        gk: {
+          title: "General Knowledge Quiz",
+          description: "Test your GK skills!",
+          time: 20,
+          totalQuestions: 10,
+        },
+        maths: {
+          title: "Maths Quiz",
+          description: "Test your Math skills!",
+          time: 20,
+          totalQuestions: 10,
+        },
+        environment: {
+          title: "Environment Quiz",
+          description: "Test your Environment skills!",
+          time: 20,
+          totalQuestions: 10,
+        },
+        history: {
+          title: "History Quiz",
+          description: "Test your History skills!",
+          time: 20,
+          totalQuestions: 10,
+        },
+        ai: {
+          title: "Artificial Intelligence Quiz",
+          description: "Test your AI skills!",
+          time: 20,
+          totalQuestions: 10,
+        },
+        movies: {
+          title: "Movies Quiz",
+          description: "Test your Movies skills!",
+          time: 20,
+          totalQuestions: 10,
+        },
+        music: {
+          title: "Music Quiz",
+          description: "Test your Music skills!",
+          time: 20,
+          totalQuestions: 10,
+        },
+        programming: {
+          title: "Programming Quiz",
+          description: "Test your Programming skills!",
+          time: 20,
+          totalQuestions: 10,
+        },
+        sports: {
+          title: "Sports Quiz",
+          description: "Test your Sports skills!",
+          time: 20,
+          totalQuestions: 10,
+        },
+        geography: {
+          title: "Geography Quiz",
+          description: "Test your Geography skills!",
+          time: 20,
+          totalQuestions: 10,
+        },
+        space: {
+          title: "Space Quiz",
+          description: "Test your Space skills!",
+          time: 20,
+          totalQuestions: 10,
+        },
+        cyber: {
+          title: "Cyber Security Quiz",
+          description: "Test your Cyber Security skills!",
+          time: 20,
+          totalQuestions: 10,
+        },
+        // Add other modules here
+      };
+
+      // Set module info dynamically
+      if (selectedModule && modules[selectedModule]) {
+        moduleTitle.textContent = modules[selectedModule].title;
+        moduleDesc.textContent = modules[selectedModule].description;
+        timeEl.textContent = modules[selectedModule].time;
+        totalEl.textContent = modules[selectedModule].totalQuestions;
+      } else {
+        moduleTitle.textContent = "Quiz Module";
+        moduleDesc.textContent = "Select a module to start the quiz!";
+      }
+
+      // Start quiz button
+      startBtn.addEventListener("click", () => {
+        if (!selectedModule) {
+          alert("Please select a module first!");
+          return;
+        }
+
+        // Store module info for test page
+        localStorage.setItem("selectedModule", selectedModule);
+        localStorage.setItem("timePerQuestion", modules[selectedModule].time);
+
+        // Navigate to test page
+        window.location.href = "test.html";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../Favicon/Favicon.ico" rel="icon" type="image/x-icon" />
+    <title>Quizzes</title>
+    <link rel="stylesheet" href="CSS/quiz.css" />
+  </head>
+  <body>
+    <div class="quiz-list-container">
+      <h1>Select a Quiz</h1>
+      <p>Choose a category to start your quiz</p>
+
+      <div class="quiz-list">
+        <div class="quiz-card" data-module="technology">
+          Technology <span>→</span>
+        </div>
+        <div class="quiz-card" data-module="science">
+          Science <span>→</span>
+        </div>
+        <div class="quiz-card" data-module="gk">
+          General Knowledge <span>→</span>
+        </div>
+        <div class="quiz-card" data-module="animals">
+          Animals <span>→</span>
+        </div>
+        <div class="quiz-card" data-module="space">Space <span>→</span></div>
+        <div class="quiz-card" data-module="history">
+          History <span>→</span>
+        </div>
+        <div class="quiz-card" data-module="geography">
+          Geography <span>→</span>
+        </div>
+        <div class="quiz-card" data-module="sports">Sports <span>→</span></div>
+        <div class="quiz-card" data-module="movies">Movies <span>→</span></div>
+        <div class="quiz-card" data-module="music">Music <span>→</span></div>
+        <div class="quiz-card" data-module="programming">
+          Programming <span>→</span>
+        </div>
+        <div class="quiz-card" data-module="ai">
+          Artificial Intelligence <span>→</span>
+        </div>
+        <div class="quiz-card" data-module="cyber">
+          Cyber Security <span>→</span>
+        </div>
+        <div class="quiz-card" data-module="maths">Maths <span>→</span></div>
+        <div class="quiz-card" data-module="environment">
+          Environment <span>→</span>
+        </div>
+      </div>
+
+      <a href="../index.html" class="back-btn">Back to Home</a>
+    </div>
+
+    <script>
+      // Select all quiz cards
+      const quizCards = document.querySelectorAll(".quiz-card");
+
+      quizCards.forEach((card) => {
+        card.addEventListener("click", () => {
+          // Save the selected module
+          const module = card.dataset.module;
+          localStorage.setItem("selectedModule", module);
+
+          // Navigate to the module page
+          window.location.href = "../Components/Pages/module.html";
+        });
+      });
+    </script>
+  </body>
+</html>
