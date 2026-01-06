@@ -31,5 +31,5 @@ Quizzy demonstrates an efficient and scalable approach to building interactive w
 ---
 
 ## 5. Live Demo
-🔗 **Live Website: 
+🔗 ## Live Website: lekasvarrpro.github.io/Quizzy/
 
